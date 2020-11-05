@@ -1,5 +1,5 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: large;
     background: rgb(255, 145, 0);
     color: black;
@@ -9,16 +9,11 @@ h1 {
     text-align: center;
 }
 
-p u {
-    text-decoration: underline;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
 nav {
     display: block;
 }
 
-ul {
+.list {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -36,11 +31,32 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border: 1px black;
 }
 li a:hover{
     background-color: rgb(255, 145, 0);
     color: black;
 }
-p{
+
+#s {
+    color: rgb(170, 175, 96);
+    text-decoration: none;
+    font-size: medium;
+}
+
+.s {
+    float: right;
+}
+
+.center {
     text-align: center; 
+    padding: 5px;
  }
+
+.picbox {
+    margin-top: 10px;
+    border: black 5px;
+    padding-top: 60px;
+    background-color: black;
+    text-align: center;
+}
