@@ -58,6 +58,11 @@ body{
     padding-inline-end: 0px;
 }
 
+.nav-bar-list a{
+   text-decoration: none;
+   color: white;
+}
+
 li {
     display: inline;
     color: white;
@@ -94,7 +99,7 @@ h3 {
 
 input[type=text],
 select {
-    width: 100%;
+    width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
