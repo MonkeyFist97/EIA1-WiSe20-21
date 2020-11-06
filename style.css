@@ -9,13 +9,9 @@ h1 {
     text-align: center;
 }
 
-nav {
-    display: block;
-}
-
 .list {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     overflow: hidden;
     background-color: black;
 }
@@ -38,13 +34,17 @@ li a:hover{
 }
 
 #s {
-    color: rgb(170, 175, 96);
+    color: rgb(194, 197, 151);
     text-decoration: none;
-    font-size: medium;
 }
 
 .s {
     float: right;
+    background-color: rgb(68, 26, 26);
+}
+li #s:hover {
+    background-color: rgb(194, 197, 151);
+    color: rgb(68, 26, 26);
 }
 
 .center {
