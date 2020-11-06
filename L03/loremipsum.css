@@ -8,8 +8,6 @@ body{
     width: 800px;
     height: 400px;
     text-align: center;
-    position: relative;
-    margin: 0 auto;
     border-bottom-left-radius: 400px; 
     border-bottom-right-radius: 400px;
     font-family: Arial, Helvetica, sans-serif;
@@ -31,7 +29,7 @@ body{
 #subtitle {
     right: 0px;
     text-align: left;
-    padding-left: 50%;
+    margin-left: 400px;
 }
 
 .Halbkreis p{
