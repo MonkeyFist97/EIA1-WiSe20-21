@@ -96,3 +96,36 @@ h3 {
     color: rgb(202, 66, 42);
     letter-spacing: -2px;
 }
+
+.kontaktformular label{
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    }
+    
+    .kontaktformular div{
+    position: relative;
+    padding: 0 8px;
+    margin: 1rem;
+    
+    }
+    
+    .kontaktformular input[type="text"],
+    .kontaktformular input[type="email"],
+    .kontaktformular textarea{
+    border: none;
+    background-color: #808080;
+    padding: 16px 0 10px;
+    font-size: 16px;
+    
+    }
+    
+    .button{
+    font-size: 12px;
+    font-family: inherit;
+    border: 0px;
+    color: white;
+    background-color: #808080;
+    cursor: pointer;
+    }
