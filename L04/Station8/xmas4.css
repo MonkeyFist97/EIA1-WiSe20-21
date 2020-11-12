@@ -1,1 +1,44 @@
+body {
+    background-image: url(/L04/Station8/images/bg.png) ;
+    height: 750px;
+    margin: 0px;
+}
+
+/*Der Bereich wo alles drinnen liegt*/
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    top: 175px;
+}
+
+/*Die Karte selber*/
+.cardItself {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+   margin: 0px;
+}
+
+/*Der Bereich für das Banderole*/
+.inhalt {
+    position: absolute;
+    width: 590px;
+    height: 390px;
+    color: white;
+
+}
+.schleife {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+/*Das YouTube-Video*/
+.ytvideo {
+    margin: 28px;
+}
 
