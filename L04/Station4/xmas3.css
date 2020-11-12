@@ -4,6 +4,7 @@ body {
     margin: 0px;
 }
 
+
 /*Der Bereich wo alles drinnen liegt*/
 .wrapper {
     position: relative;
@@ -23,23 +24,32 @@ body {
    margin: 0px;
 }
 
+/*Schriftform*/
+@font-face {
+    font-family: Zanzabar;
+    src: url(./fonts/zanzabar_d-webfont.woff);
+}
+
+
 /*Der Text innerhalb der Karte*/
 .inhalt {
     position: absolute;
     width: 450px;
     height: 300px;
-    color: white;
-
+    color: rgba(252, 227, 86, 0.925);
+    font-family: Zanzabar;
 }
 
 .inhalt h1{
     margin-left: 10px;
+    font-size: 36px;
 }
 
 .inhaltstext {
     height: 170px;
-    margin: 40px 20px 10px 10px;
-    font-size: 18px;
+    margin: 24px 20px 10px 25px;
+    font-size: 30px;
+    
 }
 
 
