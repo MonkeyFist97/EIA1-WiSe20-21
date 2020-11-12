@@ -1,1 +1,12 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    background: rgb(255, 145, 0);
+    color: black;
+}
 
+.Stationen {
+    background-color: black;
+    color:rgb(255, 145, 0);
+    text-align: center;
+}
