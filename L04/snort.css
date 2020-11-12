@@ -6,7 +6,15 @@ body {
 }
 
 .Stationen {
+    position: relative;
+    top: 200px;
     background-color: black;
     color:rgb(255, 145, 0);
+    height: 100px;
     text-align: center;
+    padding: 15px;
+}
+
+.Stationen h1 {
+    margin: 15px;
 }
