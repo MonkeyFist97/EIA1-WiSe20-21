@@ -39,7 +39,9 @@ body {
 
 /*Das YouTube-Video*/
 .ytvideo {
-    margin: 28px; 
-
+    position: relative;
+    display: flex;
+    top: 12%;
+    left: 8%;
 }
 
