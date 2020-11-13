@@ -34,25 +34,14 @@ body {
      position: relative;
  }
 
- .leuchtsterne {
-    position: absolute;
-    width: 600px;
-    height: 400px;
-    opacity: 0;
- }
-
- .leuchtsterne img{
-     position: relative;
- }
-
-.sterne:hover .leuchtsterne {
-    opacity: 1;
-}
-
 /*Sterne verteilt*/
 .adhara {
     top: 300px;
     left: 50px;
+}
+
+.adhara:hover {
+    background-image: url(./images/stern_hover.png);
 }
 
 .altair {
@@ -60,14 +49,26 @@ body {
     left: -40px;
 }
 
+.altair:hover {
+    background-image: url(./images/stern_hover.png);
+}
+
 .enif {
     top: 60px;
     left: 250px;
 }
 
+.enif:hover {
+    background-image: url(./images/stern_hover.png);
+}
+
 .rana {
     top: 250px;
     left: 250px
+}
+
+.rana:hover {
+    background-image: url(./images/stern_hover.png);
 }
 
  /*Der Text innerhalb der Karte*/
