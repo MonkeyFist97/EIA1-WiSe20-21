@@ -31,8 +31,9 @@ function anzeigeEmissionen (continent: string , continent18: number , continent0
     document.querySelector ("#emission18").innerHTML = continent18.toString();
     document.querySelector ("#percentrelative").innerHTML = (100 / (allEmissions18 / continent18)).toFixed (2);
     document.querySelector ("#percentgrowth").innerHTML = Math.round(((continent18/continent08)-1)*100).toString();
-    document.querySelector ("#rategrowth").innerHTML = Math.round(continent18 - continent08) + "kg";
+    document.querySelector ("#rategrowth").innerHTML = Math.round(continent18 - continent08).toString();
     document.querySelector (".chart").setAttribute ('style', 'height:' + (100 / (allEmissions18 / continent18)).toFixed (2) + '%');
+    document.querySelector ("").setAttribute ('style' , 'opacity:' + 1);
 }
 
 //Europa
