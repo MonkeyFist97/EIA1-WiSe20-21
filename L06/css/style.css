@@ -10,6 +10,16 @@ html, body {
 
 nav {
     margin-bottom: 60px;
+    opacity: 0,5;
+}
+nav img {
+    cursor: pointer;
+}
+
+/*aktiver Kontinent*/
+
+nav img:hover {
+    opacity: 1;
 }
 
 section {
