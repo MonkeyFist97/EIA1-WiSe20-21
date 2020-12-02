@@ -25,7 +25,7 @@ function playLoop (hihat:number , kick:number , snare:number) {
     sample [hihat].play ();
     sample [kick].play ();
     sample [snare].play ();
-    }, 400);
+    }, 300);
 };
 
 //Array für Loop
