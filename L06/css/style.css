@@ -8,24 +8,20 @@ html, body {
     background-image: radial-gradient(circle 100vw at left top,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%);
 }
 
-#active {
-    margin-bottom: 60px;
-    opacity: 0.5;
-}
-
-#active img {
-    cursor: pointer;
-}
-
-#active img:hover {
-    opacity: 1;
-}
-
-
 section {
     display: inline-block;
     margin: 20px;
     width: 200px;
+}
+
+
+nav {
+    margin-bottom: 60px;
+    opacity: 0.5;
+}
+
+.active {
+    opacity: 1;
 }
 
 .chartWrapper {
@@ -35,6 +31,7 @@ section {
     height: 100px;
     background: rgba(255, 255, 255, 0.5);
 }
+
 .chartWrapper .chart {
     position: absolute;
     bottom: 0;

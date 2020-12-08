@@ -1,0 +1,39 @@
+html, body{
+    background-color: black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 670px;
+    width: 470px;
+    justify-content: space-evenly;
+}
+
+#wrapper div{
+    height: 150px;
+    width: 150px;
+    border-radius: 5%;
+}
+
+#wrapper .padA, .padC, .padF , .padG {
+    background-color: #4937eb;
+}
+
+#wrapper .hihat, .kick, .snare {
+    background-color: #ec3db2;
+}
+
+#wrapper .laugh-2, .laugh-1 {
+    background-color: #f38123;
+}
+
+.playButton {
+    margin-top: 50px;
+    position: relative;
+}
