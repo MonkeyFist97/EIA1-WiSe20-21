@@ -33,15 +33,18 @@ var button = document.querySelector('button');
 button.addEventListener('click', function () {
     if (button.classList.contains('potato')) {
         button.classList.remove('potato');
-        button.classList.add('kale'); //wieso onclick -> kale UND potato statt nur kale?//
+        button.classList.add('kale');
+        console.log('if ausgeführt'); //wieso onclick -> kale UND potato statt nur kale?//
     }
     else if (button.classList.contains('kale')) {
         button.classList.remove('kale');
         button.classList.add('carrot');
+        console.log('else if ausgeführt');
     }
-    else
-        (button.classList.contains('carrot'));
-    button.classList.remove('carrot');
-    button.classList.add('potato');
+    else if (button.classList.contains('carrot')) {
+        button.classList.remove('carrot');
+        button.classList.add('potato');
+        console.log('else ausgeführt');
+    }
 });
 //# sourceMappingURL=test.js.map

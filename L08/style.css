@@ -1,5 +1,5 @@
 html, body{
-    background-color: black;
+    background-color: midnightblue;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -10,9 +10,10 @@ html, body{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: 670px;
-    width: 470px;
+    height: 475px;
+    width: 480px;
     justify-content: space-evenly;
+    position: absolute;
 }
 
 #wrapper div{
@@ -33,7 +34,35 @@ html, body{
     background-color: #f38123;
 }
 
-.playButton {
-    margin-top: 50px;
+/*Buttons*/
+.intButtons {
+    width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    top: 280px;
+    font-size: 300%;
+    color: white;
+}
+
+.intButtons i{
+    margin: 5px;
+}
+
+.intButtons i:hover{
+    opacity: 70%;
+}
+
+.intButtons i:active{
+    transform: scale(1.3);
+    transition: all 0.05s;
+}
+
+.inactive{
+    color: white;
+}
+
+.active{
+    color: red;
 }
