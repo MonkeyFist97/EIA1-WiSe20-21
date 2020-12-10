@@ -88,18 +88,17 @@ var playButton: HTMLElement = document.getElementById ("play");
 var stopButton: HTMLElement = document.getElementById ("stop");
 
 playButton.addEventListener ( "click" , function (): void {
-    playStop (this, stopButton);
+    togglePlayStop (this, stopButton);
 });
 
 stopButton.addEventListener ( "click" , function (): void {
-    playStop (this, playButton);
+    togglePlayStop (this, playButton);
 });
 
-function playStop (firstHTML: HTMLElement , secondHTML: HTMLElement): void {
+function togglePlayStop (firstHTML: HTMLElement , secondHTML: HTMLElement): void {
     firstHTML.classList.add ("is-hidden");
     secondHTML.classList.remove ("is-hidden");
 }
-
 
 
 //Funktion Recording

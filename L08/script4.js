@@ -70,12 +70,12 @@ window.addEventListener("load", function () {
 var playButton = document.getElementById("play");
 var stopButton = document.getElementById("stop");
 playButton.addEventListener("click", function () {
-    playStop(this, stopButton);
+    togglePlayStop(this, stopButton);
 });
 stopButton.addEventListener("click", function () {
-    playStop(this, playButton);
+    togglePlayStop(this, playButton);
 });
-function playStop(firstHTML, secondHTML) {
+function togglePlayStop(firstHTML, secondHTML) {
     firstHTML.classList.add("is-hidden");
     secondHTML.classList.remove("is-hidden");
 }
