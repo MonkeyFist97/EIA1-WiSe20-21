@@ -20,10 +20,10 @@ var allEmissions18 = (africa18 + samerica18 + europa18 + namerica18 + asia18 + a
 //Funktion
 function anzeigeEmissionen(continent, continent18, continent08) {
     document.querySelector(".titleRegion").innerHTML = continent;
-    document.querySelector("#emission18").innerHTML = continent18 + "t CO2";
+    document.querySelector("#emission18").innerHTML = continent18 + "kg CO2";
     document.querySelector("#percentrelative").innerHTML = (100 / (allEmissions18 / continent18)).toFixed(2);
     document.querySelector("#percentgrowth").innerHTML = Math.round(((continent18 / continent08) - 1) * 100).toString();
-    document.querySelector("#rategrowth").innerHTML = Math.round(continent18 - continent08) + "t CO2";
+    document.querySelector("#rategrowth").innerHTML = Math.round(continent18 - continent08) + "kg CO2";
     document.querySelector(".chart").setAttribute('style', 'height:' + (100 / (allEmissions18 / continent18)).toFixed(2) + '%');
 }
 //Europa
