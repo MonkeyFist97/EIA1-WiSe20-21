@@ -67,6 +67,7 @@ document.querySelector (".snare").addEventListener ("click" , function (): void 
 });
 
 
+//Record-Button leuchtet rot auf wenn "Aktiv"
 var recordButton: HTMLElement = document.getElementById ("record");
 
 window.addEventListener ("load" , function (): void {
@@ -80,3 +81,30 @@ window.addEventListener ("load" , function (): void {
     }
 });
 });
+
+
+//Play-Button transformiert zu Stop-Button
+var playButton: HTMLElement = document.getElementById ("play");
+var stopButton: HTMLElement = document.getElementById ("stop");
+
+playButton.addEventListener ( "click" , function (): void {
+    playStop (this, stopButton);
+});
+
+stopButton.addEventListener ( "click" , function (): void {
+    playStop (this, playButton);
+});
+
+function playStop (firstHTML: HTMLElement , secondHTML: HTMLElement): void {
+    firstHTML.classList.add ("is-hidden");
+    secondHTML.classList.remove ("is-hidden");
+}
+
+
+
+//Funktion Recording
+
+
+
+
+

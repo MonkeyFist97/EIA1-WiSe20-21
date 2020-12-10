@@ -20,6 +20,15 @@ html, body{
     height: 150px;
     width: 150px;
     border-radius: 5%;
+    opacity: 80%;
+}
+
+#wrapper div:hover{
+    opacity: 100%;
+}
+
+#wrapper div:active{
+    opacity: 100%;
 }
 
 #wrapper .padA, .padC, .padF , .padG {
@@ -65,4 +74,8 @@ html, body{
 
 .active{
     color: red;
+}
+
+.is-hidden{
+    display: none !important;
 }

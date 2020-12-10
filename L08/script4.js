@@ -52,6 +52,7 @@ document.querySelector(".laugh-2").addEventListener("click", function () {
 document.querySelector(".snare").addEventListener("click", function () {
     playSample(8);
 });
+//Record-Button leuchtet rot auf wenn "Aktiv"
 var recordButton = document.getElementById("record");
 window.addEventListener("load", function () {
     recordButton.addEventListener("click", function () {
@@ -65,4 +66,18 @@ window.addEventListener("load", function () {
         }
     });
 });
+//Play-Button transformiert zu Stop-Button
+var playButton = document.getElementById("play");
+var stopButton = document.getElementById("stop");
+playButton.addEventListener("click", function () {
+    playStop(this, stopButton);
+});
+stopButton.addEventListener("click", function () {
+    playStop(this, playButton);
+});
+function playStop(firstHTML, secondHTML) {
+    firstHTML.classList.add("is-hidden");
+    secondHTML.classList.remove("is-hidden");
+}
+//Funktion Recording
 //# sourceMappingURL=script4.js.map
