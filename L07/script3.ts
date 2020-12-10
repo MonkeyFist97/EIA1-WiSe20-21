@@ -15,7 +15,7 @@ sample[8] = new Audio('./assets/snare.mp3');
 
 
 //Funktion
-function playSample (Sound:number) {
+function playSample (Sound:number): void {
     sample[Sound].play ();
 }
 
