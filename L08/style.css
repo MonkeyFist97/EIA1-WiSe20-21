@@ -6,6 +6,7 @@ html, body{
     align-items: center;
 }
 
+/*Drumpads und Buttons*/
 #wrapper{
     display: flex;
     align-items: center;
@@ -31,6 +32,7 @@ html, body{
     opacity: 100%;
 }
 
+/*Farben der Pads*/
 #wrapper .padA, .padC, .padF , .padG {
     background-color: #4937eb;
 }
@@ -61,6 +63,10 @@ html, body{
 
 .intButtons i:hover{
     opacity: 70%;
+}
+
+#trash:hover {
+    color: red;
 }
 
 .intButtons i:active{
