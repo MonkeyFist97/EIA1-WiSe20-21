@@ -102,10 +102,12 @@ window.addEventListener ("load" , function (): void {
 });
 //Die Sounds aufnehmen - Die Töne in den Beat Array pushen
 
+// tslint:disable-next-line:variable-name
 function recordingBeat (Sound: number): void {
     if (recording == true) {
+    // tslint:disable-next-line: no-use-before-declare
     beat.push(Sound);
-}};
+}}
 
 
 //Der aufgenommene Loop wiederholt sich hiermit 
@@ -114,13 +116,13 @@ let beat: number [] = [];
 let index: number = 0;
  
 function playLoop (): void {
-    myInterval = setInterval (function () {
+    myInterval = setInterval (function (): void {
 
-    if (index < beat.length){
-        playSample(beat [index]) index++;
-    } else {index = 0;}
-    },      300);
-};
+    if (index < beat.length) {
+        playSample(beat [index]); index++;
+    } else {index = 0; }
+    },                        300);
+}
 
 
 //Play-Button transformiert zu Stop-Button

@@ -11,21 +11,20 @@ sample[6] = new Audio('./assets/laugh-1.mp3');
 sample[7] = new Audio('./assets/laugh-2.mp3');
 sample[8] = new Audio('./assets/snare.mp3');
 //Funktion
-function playSample(Sound) {
-    sample[Sound].play();
-}
+//function playSample (Sound:number): void {
+//    sample[Sound].play ();
+//}
 //Play-Button
-function playLoop(hihat, kick, snare) {
-    setInterval(function () {
-        sample[hihat].play();
-        sample[kick].play();
-        sample[snare].play();
-    }, 300);
-}
-;
+//function playLoop (hihat:number , kick:number , snare:number) {
+//    setInterval (function () {
+//    sample [hihat].play ();
+//    sample [kick].play ();
+//    sample [snare].play ();
+//    }, 300);
+//};
 //Array für Loop
 document.querySelector(".playButton").addEventListener('click', function () {
-    playLoop(4, 5, 8);
+    //   playLoop (4,5,8)
 });
 //Sound A
 document.querySelector(".padA").addEventListener('click', function () {

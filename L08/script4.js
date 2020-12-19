@@ -83,12 +83,13 @@ window.addEventListener("load", function () {
     });
 });
 //Die Sounds aufnehmen - Die Töne in den Beat Array pushen
+// tslint:disable-next-line:variable-name
 function recordingBeat(Sound) {
     if (recording == true) {
+        // tslint:disable-next-line: no-use-before-declare
         beat.push(Sound);
     }
 }
-;
 //Der aufgenommene Loop wiederholt sich hiermit 
 var myInterval;
 var beat = [];
@@ -104,7 +105,6 @@ function playLoop() {
         }
     }, 300);
 }
-;
 //Play-Button transformiert zu Stop-Button
 function togglePlayStop(firstHTML, secondHTML) {
     firstHTML.classList.add("is-hidden");
