@@ -24,8 +24,20 @@ function createTask(): void {
     myTask.className = "task";
     let myTick = document.createElement ("input");//..die Checkbox,.. 
     myTick.type = "checkbox";
+    myTick.classList.add ("tick");
+    //Erledigte To-Do´s werden durchgestrichen
+    myTick.addEventListener ("click", function (): void {
+        if (myLabel.classList.contains("active")) {
+            myLabel.classList.remove("active");
+            myLabel.classList.add("done")
+        } else if (myLabel.classList.contains("done")) {
+            myLabel.classList.remove("done");
+            myLabel.classList.add ("active");
+        }
+    });
     let myLabel: HTMLLabelElement = document.createElement ("label");//..der neue Task,..
     myLabel.innerHTML = inputField.value;
+    myLabel.classList.add ("active");
     var trashButton: HTMLElement = document.createElement ("i");//..sowie der Müll-Button befinden
     trashButton.className = "fas fa-trash-alt";
     //Trash-Button löscht das entsprechende To-Do - muss innerhalb Funktion sein da "myTask" lokale deklarierte Variable!
@@ -45,6 +57,7 @@ function createTask(): void {
     amount++;
     showAmount();
 };
+
 
 //Das DOM wird manipuliert und die aktuelle Anzahl der To-Do´s wird angezeigt
 function showAmount (): void {
