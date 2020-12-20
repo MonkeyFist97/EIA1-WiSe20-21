@@ -12,7 +12,7 @@ inputField.addEventListener ("keypress", function (e: KeyboardEvent): void {
 });
 
 //Add Button - generiert ein neues To-Do mit dem "Add" Button
-document.getElementById("addButton").addEventListener ("click", function(): void {  //warum addEventListener auf Null bei "byClass" oder "querySelector"
+document.getElementById("addButton").addEventListener ("click", function(): void {  //warum addEventListener auf Null bei "byClass" oder "querySelector"?
     if (inputField.value != "") {
     createTask ();
     inputField.value = ""; //Hier gilt das gleiche wie oben!
@@ -29,7 +29,7 @@ function createTask(): void {
     myTick.addEventListener ("click", function (): void {
         if (myLabel.classList.contains("active")) {
             myLabel.classList.remove("active");
-            myLabel.classList.add("done")
+            myLabel.classList.add("done");
         } else if (myLabel.classList.contains("done")) {
             myLabel.classList.remove("done");
             myLabel.classList.add ("active");
@@ -48,7 +48,7 @@ function createTask(): void {
     });
 
     //Vorgang, wie alles verschachtelt wird
-    document.getElementById ("todoList").appendChild (myTask)
+    document.getElementById ("todoList").appendChild (myTask);
     myTask.appendChild(myTick); //"myTask" statt "document.get.." weil ".appendChild" sonst spinnt!
     myTask.appendChild(myLabel); // ..spinnt immer noch!
     myTask.appendChild(trashButton); // .. no comment!
