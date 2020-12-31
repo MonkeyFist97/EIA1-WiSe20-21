@@ -17,11 +17,15 @@ var inputDOMElement;
 var addButtonDOMElement;
 var todosDOMElement;
 var counterDOMElement;
+var openDOMElement;
+var doneDOMElement;
 window.addEventListener("load", function () {
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
     counterDOMElement = document.querySelector("#counter");
+    openDOMElement = document.querySelector("#open");
+    doneDOMElement = document.querySelector("#done");
     addButtonDOMElement.addEventListener("click", addTodo);
     drawListToDOM();
 });
@@ -48,7 +52,24 @@ function drawListToDOM() {
 }
 function updateCounter() {
     counterDOMElement.innerHTML = myArray.length + " in total";
+    var openCount = 0;
+    var doneCount = 0;
+    for (var index_2 = 0; index_2 < myArray.length; index_2++) {
+        //*console.log(doneCount , openCount);
+        if (myArray[index_2].checked == false) {
+            openCount++;
+            //*console.log(openCount);
+        }
+        else {
+            doneCount++;
+            //*console.log(doneCount);
+        }
+        //*console.log(doneCount , openCount);
+        openDOMElement.innerHTML = openCount + " open";
+        doneDOMElement.innerHTML = doneCount + " done";
+    }
 }
+;
 function addTodo() {
     if (inputDOMElement.value != "") {
         myArray.unshift({

@@ -4,37 +4,41 @@
  * 
 */
 //--Man erstelle ein Interface mit den Eigenschaften "text" und "checked", das als einziges Array funktioniert
-interface ToDos {    
+interface ToDos {
     text: string;
     checked: boolean;
 }
 
 //Jetzt die Objekte in Instanzen zu Beginn der Website
 var myArray: ToDos[] = [
-{
-    text: "Lorem",
-    checked: true
-},
-{
-    text: "Ipsum",
-    checked: false
-},
-{
-    text: "Dolor",
-    checked: false
-}];
+    {
+        text: "Lorem",
+        checked: true
+    },
+    {
+        text: "Ipsum",
+        checked: false
+    },
+    {
+        text: "Dolor",
+        checked: false
+    }];
 
 
 var inputDOMElement: HTMLInputElement;
 var addButtonDOMElement: HTMLElement;
 var todosDOMElement: HTMLElement;
 var counterDOMElement: HTMLElement;
+var openDOMElement: HTMLElement;
+var doneDOMElement: HTMLElement;
 
-window.addEventListener("load", function(): void {
+window.addEventListener("load", function (): void {
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
     counterDOMElement = document.querySelector("#counter");
+    openDOMElement = document.querySelector("#open");
+    doneDOMElement = document.querySelector("#done");
     addButtonDOMElement.addEventListener("click", addTodo);
     drawListToDOM();
 });
@@ -44,14 +48,13 @@ function drawListToDOM(): void {
     for (let index: number = 0; index < myArray.length; index++) {
         let todo: HTMLElement = document.createElement("div");
         todo.classList.add("todo");
-        todo.innerHTML =  "<span class='check " + myArray[index].checked + "'><i class='fas fa-check'></i></span>"
-                            + myArray[index].text +
-                            "<span class='trash fas fa-trash-alt'></span>";
-
-        todo.querySelector(".check").addEventListener("click", function(): void {
+        todo.innerHTML = "<span class='check " + myArray[index].checked + "'><i class='fas fa-check'></i></span>"
+            + myArray[index].text +
+            "<span class='trash fas fa-trash-alt'></span>";
+        todo.querySelector(".check").addEventListener("click", function (): void {
             toggleCheckState(index);
         });
-        todo.querySelector(".trash").addEventListener("click", function(): void {
+        todo.querySelector(".trash").addEventListener("click", function (): void {
             deleteTodo(index);
         });
         todosDOMElement.appendChild(todo);
@@ -61,7 +64,23 @@ function drawListToDOM(): void {
 
 function updateCounter(): void {
     counterDOMElement.innerHTML = myArray.length + " in total";
-}
+        let openCount = 0;
+        let doneCount = 0;
+    for (let index: number = 0; index < myArray.length; index++) {
+        //*console.log(doneCount , openCount);
+        if (myArray[index].checked == false) {
+            openCount++;
+            //*console.log(openCount);
+        }
+        else {
+            doneCount++;
+            //*console.log(doneCount);
+        }
+        //*console.log(doneCount , openCount);
+        
+        openDOMElement.innerHTML = openCount + " open";
+        doneDOMElement.innerHTML = doneCount + " done";
+}};
 
 function addTodo(): void {
     if (inputDOMElement.value != "") {
