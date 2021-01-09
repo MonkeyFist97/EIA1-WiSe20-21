@@ -1,6 +1,8 @@
 /**Aufgaben: 1.Statt zwei ToDo-Arrays, nur noch EIN Array
  *           2.To-Do Objekte benutzen
  *           3.Ein neuer To-Do-Eintrag soll am Anfang statt am Ende hinzugefügt werden
+ *           4.Weitere zwei Counter, einer "Done", der andere "Open"
+ *           5.Artyom, Baby!
  * 
 */
 //--Man erstelle ein Interface mit den Eigenschaften "text" und "checked", das als einziges Array funktioniert
@@ -82,9 +84,12 @@ function updateCounter(): void {
         doneDOMElement.innerHTML = doneCount + " done";
 }};
 
+//Counter mit Filter
+ //myArray.filter(checked => checked.param1 == true).length
+
 function addTodo(): void {
     if (inputDOMElement.value != "") {
-        myArray.unshift({                      /*myArray.push("Met" , false) : ToDo? */
+        myArray.unshift({                      /*myArray.unshift("Met" , false) : ToDo? */
             text: inputDOMElement.value,
             checked: false
         });

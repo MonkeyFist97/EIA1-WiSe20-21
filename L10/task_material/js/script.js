@@ -70,6 +70,8 @@ function updateCounter() {
     }
 }
 ;
+//Counter mit Filter
+//myArray.filter(checked => checked.param1 == true).length
 function addTodo() {
     if (inputDOMElement.value != "") {
         myArray.unshift({
