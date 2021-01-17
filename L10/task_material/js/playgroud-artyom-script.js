@@ -7,14 +7,8 @@ window.addEventListener("load", function () {
             console.log("Neue Aufgabe wird erstellt: " + wildcard);
         }
     });
-    function stopContinuousArtyom() {
+    function startContinuousArtyom() {
         artyom.fatality();
-    }
-    ;
-    var recordButton;
-    recordButton = document.querySelector("fas fa-microphone");
-    recordButton.addEventListener("onclick", function () {
-        console.log("clicked registered");
         setTimeout(function () {
             artyom.initialize({
                 lang: "de-DE",
@@ -26,6 +20,12 @@ window.addEventListener("load", function () {
                 console.log("Ready!");
             });
         }, 250);
-    });
+    }
+    startContinuousArtyom();
+});
+var recordButtonDOMElement;
+recordButtonDOMElement = document.querySelector("#recordButton");
+recordButtonDOMElement.addEventListener("onclick", function () {
+    console.log("click registered");
 });
 //# sourceMappingURL=playgroud-artyom-script.js.map

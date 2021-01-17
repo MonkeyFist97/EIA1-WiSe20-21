@@ -19,6 +19,7 @@ var todosDOMElement;
 var counterDOMElement;
 var openDOMElement;
 var doneDOMElement;
+var recordButtonDOMElement;
 window.addEventListener("load", function () {
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
@@ -26,6 +27,7 @@ window.addEventListener("load", function () {
     counterDOMElement = document.querySelector("#counter");
     openDOMElement = document.querySelector("#open");
     doneDOMElement = document.querySelector("#done");
+    recordButtonDOMElement = document.querySelector("#recordButton");
     addButtonDOMElement.addEventListener("click", addTodo);
     drawListToDOM();
 });
@@ -90,4 +92,36 @@ function deleteTodo(index) {
     myArray.splice(index, 1);
     drawListToDOM();
 }
+window.addEventListener("load", function () {
+    var artyom = new Artyom();
+    artyom.addCommands({
+        indexes: ["Erstelle Aufgabe *"],
+        smart: true,
+        action: function (i, wildcard) {
+            myArray.unshift({
+                text: wildcard,
+                checked: false
+            });
+            drawListToDOM();
+        }
+    });
+    function startContinuousArtyom() {
+        artyom.fatality();
+        setTimeout(function () {
+            artyom.initialize({
+                lang: "de-DE",
+                continuous: true,
+                listen: true,
+                interimResults: true,
+                debug: true
+            }).then(function () {
+                console.log("Ready!");
+            });
+        }, 250);
+    }
+    startContinuousArtyom();
+    recordButtonDOMElement.addEventListener("onclick", function () {
+        startContinuousArtyom;
+    });
+});
 //# sourceMappingURL=script.js.map

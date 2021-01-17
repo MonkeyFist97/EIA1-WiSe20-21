@@ -33,6 +33,7 @@ var todosDOMElement: HTMLElement;
 var counterDOMElement: HTMLElement;
 var openDOMElement: HTMLElement;
 var doneDOMElement: HTMLElement;
+var recordButtonDOMElement: HTMLElement;
 
 window.addEventListener("load", function (): void {
     inputDOMElement = document.querySelector("#inputTodo");
@@ -41,7 +42,9 @@ window.addEventListener("load", function (): void {
     counterDOMElement = document.querySelector("#counter");
     openDOMElement = document.querySelector("#open");
     doneDOMElement = document.querySelector("#done");
+    recordButtonDOMElement = document.querySelector("#recordButton");
     addButtonDOMElement.addEventListener("click", addTodo);
+
     drawListToDOM();
 });
 
@@ -66,8 +69,8 @@ function drawListToDOM(): void {
 
 function updateCounter(): void {
     counterDOMElement.innerHTML = myArray.length + " in total";
-        let openCount = 0;
-        let doneCount = 0;
+    let openCount = 0;
+    let doneCount = 0;
     for (let index: number = 0; index < myArray.length; index++) {
         //*console.log(doneCount , openCount);
         if (myArray[index].checked == false) {
@@ -79,13 +82,14 @@ function updateCounter(): void {
             //*console.log(doneCount);
         }
         //*console.log(doneCount , openCount);
-        
+
         openDOMElement.innerHTML = openCount + " open";
         doneDOMElement.innerHTML = doneCount + " done";
-}};
+    }
+};
 
 //Counter mit Filter
- //myArray.filter(checked => checked.param1 == true).length
+//myArray.filter(checked => checked.param1 == true).length
 
 function addTodo(): void {
     if (inputDOMElement.value != "") {
@@ -96,6 +100,8 @@ function addTodo(): void {
         inputDOMElement.value = "";
         drawListToDOM();
     }
+
+
 }
 
 function toggleCheckState(index: number): void {
@@ -107,3 +113,48 @@ function deleteTodo(index: number): void {
     myArray.splice(index, 1);
     drawListToDOM();
 }
+
+//Artyom-Funktion
+
+declare var Artyom: any;
+
+window.addEventListener("load", function (): void {
+    const artyom: any = new Artyom();
+
+    artyom.addCommands({
+        indexes: ["Erstelle Aufgabe *"],
+        smart: true,
+        action: function (i: any, wildcard: string): void {
+            myArray.unshift({                  
+                text: wildcard,
+                checked: false
+            });
+            drawListToDOM();
+        }
+    });
+
+    function startContinuousArtyom(): void {
+        artyom.fatality();
+
+        setTimeout(
+            function (): void {
+                artyom.initialize({
+                    lang: "de-DE",
+                    continuous: true,
+                    listen: true,
+                    interimResults: true,
+                    debug: true
+                }).then(function (): void {
+                    console.log("Ready!");
+                });
+            },
+            250);
+    }
+
+    startContinuousArtyom();
+
+    recordButtonDOMElement.addEventListener("onclick", function (): void {
+        startContinuousArtyom;
+    });
+});
+
