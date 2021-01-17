@@ -153,8 +153,8 @@ window.addEventListener("load", function (): void {
 
     startContinuousArtyom();
 
-    recordButtonDOMElement.addEventListener("onclick", function (): void {
-        startContinuousArtyom;
-    });
+    // recordButtonDOMElement.addEventListener("onclick", function (): void {
+    //     startContinuousArtyom;
+    // });
 });
 

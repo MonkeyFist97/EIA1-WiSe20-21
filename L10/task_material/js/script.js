@@ -120,8 +120,8 @@ window.addEventListener("load", function () {
         }, 250);
     }
     startContinuousArtyom();
-    recordButtonDOMElement.addEventListener("onclick", function () {
-        startContinuousArtyom;
-    });
+    // recordButtonDOMElement.addEventListener("onclick", function (): void {
+    //     startContinuousArtyom;
+    // });
 });
 //# sourceMappingURL=script.js.map
