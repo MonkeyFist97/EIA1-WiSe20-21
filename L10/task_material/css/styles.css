@@ -61,15 +61,16 @@ main {
     background: none;
     border: none;
     outline: none;
-    color: grey;
     cursor: pointer;
+    color: grey;
 }
+
 
 #recordButton:hover {
     color: black;
 }
 
-#recordButton:active {
+.active {
     color: red;
 }
 

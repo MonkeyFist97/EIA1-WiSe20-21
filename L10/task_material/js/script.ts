@@ -118,43 +118,46 @@ function deleteTodo(index: number): void {
 
 declare var Artyom: any;
 
-window.addEventListener("load", function (): void {
-    const artyom: any = new Artyom();
+const artyom: any = new Artyom();
 
-    artyom.addCommands({
-        indexes: ["Erstelle Aufgabe *"],
-        smart: true,
-        action: function (i: any, wildcard: string): void {
-            myArray.unshift({                  
-                text: wildcard,
-                checked: false
-            });
-            drawListToDOM();
-        }
-    });
-
-    function startContinuousArtyom(): void {
-        artyom.fatality();
-
-        setTimeout(
-            function (): void {
-                artyom.initialize({
-                    lang: "de-DE",
-                    continuous: true,
-                    listen: true,
-                    interimResults: true,
-                    debug: true
-                }).then(function (): void {
-                    console.log("Ready!");
-                });
-            },
-            250);
+artyom.addCommands({
+    indexes: ["Erstelle Aufgabe *"],
+    smart: true,
+    action: function (i: any, wildcard: string): void {
+        myArray.unshift({
+            text: wildcard,
+            checked: false
+        });
+        drawListToDOM();
     }
-
-    startContinuousArtyom();
-
-    // recordButtonDOMElement.addEventListener("onclick", function (): void {
-    //     startContinuousArtyom;
-    // });
 });
+
+function startArtyom(): void {
+    artyom.initialize({
+            lang: "de-DE",
+            continuous: true,
+            listen: true,
+            interimResults: true,
+            debug: true
+        }).then(function (): void {
+            console.log("Ready!");
+        });
+
+function stopArtyom(): void {
+    artyom.fatality();
+};
+    
+
+document.getElementById("recordButton").addEventListener("click", function (): void {
+    startArtyom();
+};
+
+
+ // if (document.getElementById("recordButton").classList.contains("fas fa-microphone")) {
+    //     document.getElementById("recordButton").classList.add("active");
+    // } else if (document.getElementById("recordButton").classList.contains("active")) {
+    //     document.getElementById("recordButton").classList.remove("active");
+    //     artyom.fatality();
+
+
 

@@ -92,36 +92,44 @@ function deleteTodo(index) {
     myArray.splice(index, 1);
     drawListToDOM();
 }
-window.addEventListener("load", function () {
-    var artyom = new Artyom();
-    artyom.addCommands({
-        indexes: ["Erstelle Aufgabe *"],
-        smart: true,
-        action: function (i, wildcard) {
-            myArray.unshift({
-                text: wildcard,
-                checked: false
-            });
-            drawListToDOM();
-        }
-    });
-    function startContinuousArtyom() {
-        artyom.fatality();
-        setTimeout(function () {
-            artyom.initialize({
-                lang: "de-DE",
-                continuous: true,
-                listen: true,
-                interimResults: true,
-                debug: true
-            }).then(function () {
-                console.log("Ready!");
-            });
-        }, 250);
+var artyom = new Artyom();
+artyom.addCommands({
+    indexes: ["Erstelle Aufgabe *"],
+    smart: true,
+    action: function (i, wildcard) {
+        myArray.unshift({
+            text: wildcard,
+            checked: false
+        });
+        drawListToDOM();
     }
-    startContinuousArtyom();
-    // recordButtonDOMElement.addEventListener("onclick", function (): void {
-    //     startContinuousArtyom;
-    // });
 });
+function startArtyom() {
+    artyom.initialize({
+        lang: "de-DE",
+        continuous: true,
+        listen: true,
+        interimResults: true,
+        debug: true
+    }).then(function () {
+        console.log("Ready!");
+    });
+    function stopArtyom() {
+        artyom.fatality();
+    }
+    ;
+    document.getElementById("recordButton").addEventListener("click", function () {
+        startArtyom();
+    });
+    // if (document.getElementById("recordButton").classList.contains("fas fa-microphone")) {
+    //     document.getElementById("recordButton").classList.add("active");
+    // } else if (document.getElementById("recordButton").classList.contains("active")) {
+    //     document.getElementById("recordButton").classList.remove("active");
+    //     artyom.fatality();
+}
+// if (document.getElementById("recordButton").classList.contains("fas fa-microphone")) {
+//     document.getElementById("recordButton").classList.add("active");
+// } else if (document.getElementById("recordButton").classList.contains("active")) {
+//     document.getElementById("recordButton").classList.remove("active");
+//     artyom.fatality();
 //# sourceMappingURL=script.js.map
