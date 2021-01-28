@@ -35,7 +35,7 @@ var openDOMElement: HTMLElement;
 var doneDOMElement: HTMLElement;
 var recordButtonDOMElement: HTMLElement;
 
-window.addEventListener("load", function (): void {
+//window.addEventListener("load", function (): void {
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
@@ -46,7 +46,7 @@ window.addEventListener("load", function (): void {
     addButtonDOMElement.addEventListener("click", addTodo);
 
     drawListToDOM();
-});
+//});
 
 function drawListToDOM(): void {
     todosDOMElement.innerHTML = "";
@@ -142,6 +142,7 @@ function startArtyom(): void {
         }).then(function (): void {
             console.log("Ready!");
         });
+    };
 
 function stopArtyom(): void {
     artyom.fatality();
@@ -149,15 +150,13 @@ function stopArtyom(): void {
     
 
 document.getElementById("recordButton").addEventListener("click", function (): void {
-    startArtyom();
-};
-
-
- // if (document.getElementById("recordButton").classList.contains("fas fa-microphone")) {
-    //     document.getElementById("recordButton").classList.add("active");
-    // } else if (document.getElementById("recordButton").classList.contains("active")) {
-    //     document.getElementById("recordButton").classList.remove("active");
-    //     artyom.fatality();
+    if (document.getElementById("recordButton").getAttribute("class") == "fas fa-microphone") {
+        document.getElementById("recordButton").setAttribute("class", "fas fa-microphone active");
+        startArtyom();
+    } else if (document.getElementById("recordButton").getAttribute("class") == "fas fa-microphone active") {
+        document.getElementById("recordButton").setAttribute("class" , "fas fa-microphone");
+        artyom.fatality();
+    }});
 
 
 

@@ -20,17 +20,17 @@ var counterDOMElement;
 var openDOMElement;
 var doneDOMElement;
 var recordButtonDOMElement;
-window.addEventListener("load", function () {
-    inputDOMElement = document.querySelector("#inputTodo");
-    addButtonDOMElement = document.querySelector("#addButton");
-    todosDOMElement = document.querySelector("#todos");
-    counterDOMElement = document.querySelector("#counter");
-    openDOMElement = document.querySelector("#open");
-    doneDOMElement = document.querySelector("#done");
-    recordButtonDOMElement = document.querySelector("#recordButton");
-    addButtonDOMElement.addEventListener("click", addTodo);
-    drawListToDOM();
-});
+//window.addEventListener("load", function (): void {
+inputDOMElement = document.querySelector("#inputTodo");
+addButtonDOMElement = document.querySelector("#addButton");
+todosDOMElement = document.querySelector("#todos");
+counterDOMElement = document.querySelector("#counter");
+openDOMElement = document.querySelector("#open");
+doneDOMElement = document.querySelector("#done");
+recordButtonDOMElement = document.querySelector("#recordButton");
+addButtonDOMElement.addEventListener("click", addTodo);
+drawListToDOM();
+//});
 function drawListToDOM() {
     todosDOMElement.innerHTML = "";
     var _loop_1 = function (index_1) {
@@ -114,22 +114,20 @@ function startArtyom() {
     }).then(function () {
         console.log("Ready!");
     });
-    function stopArtyom() {
+}
+;
+function stopArtyom() {
+    artyom.fatality();
+}
+;
+document.getElementById("recordButton").addEventListener("click", function () {
+    if (document.getElementById("recordButton").getAttribute("class") == "fas fa-microphone") {
+        document.getElementById("recordButton").setAttribute("class", "fas fa-microphone active");
+        startArtyom();
+    }
+    else if (document.getElementById("recordButton").getAttribute("class") == "fas fa-microphone active") {
+        document.getElementById("recordButton").setAttribute("class", "fas fa-microphone");
         artyom.fatality();
     }
-    ;
-    document.getElementById("recordButton").addEventListener("click", function () {
-        startArtyom();
-    });
-    // if (document.getElementById("recordButton").classList.contains("fas fa-microphone")) {
-    //     document.getElementById("recordButton").classList.add("active");
-    // } else if (document.getElementById("recordButton").classList.contains("active")) {
-    //     document.getElementById("recordButton").classList.remove("active");
-    //     artyom.fatality();
-}
-// if (document.getElementById("recordButton").classList.contains("fas fa-microphone")) {
-//     document.getElementById("recordButton").classList.add("active");
-// } else if (document.getElementById("recordButton").classList.contains("active")) {
-//     document.getElementById("recordButton").classList.remove("active");
-//     artyom.fatality();
+});
 //# sourceMappingURL=script.js.map
